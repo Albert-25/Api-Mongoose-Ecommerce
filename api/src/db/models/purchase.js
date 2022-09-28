@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
-const shoppingCartProductSchema = new mongoose.Schema({
+const purchaseSchema = new mongoose.Schema({
     userId: { type: mongoose.Types.ObjectId },
     productsId: [{ type: mongoose.Types.ObjectId }],
+    status: { type: String, enum: ["undelivered", "delivered"] },
     createdAt: { type: Date, default: new Date() }
 }, {
     versionKey: false
 });
 
-const shoppingCartProductModel = mongoose.model("shoppingCartProduct", shoppingCartProductSchema);
+const purchaseModel = mongoose.model("purchase", purchaseSchema);
 
-module.exports = shoppingCartProductModel;
+module.exports = purchaseModel;

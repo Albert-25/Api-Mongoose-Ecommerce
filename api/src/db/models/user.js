@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
     name: { type: String, require: true },
-    lastname: { type: String, },
+    lastname: { type: String },
     email: { type: String },
     cellphone: { type: Number },
     password: { type: String, require: true },
-    favorites: [{ type: mongoose.Types.ObjectId }],
+    favoritesId: [{ type: mongoose.Types.ObjectId }],
     createdAt: { type: Date, default: new Date() }
 }, {
     versionKey: false
