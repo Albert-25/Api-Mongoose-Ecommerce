@@ -1,5 +1,5 @@
 const app = require("./app")
-const PORT = 3000;
+const { PORT } = require("./src/config/index");
 const mongooseConnection = require("./src/db/mongooseConnection");
 
 mongooseConnection()
